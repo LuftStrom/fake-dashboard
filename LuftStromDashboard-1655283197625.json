@@ -1,0 +1,1471 @@
+{
+  "__inputs": [
+    {
+      "name": "DS_TESTDATA_DB",
+      "label": "TestData DB",
+      "description": "",
+      "type": "datasource",
+      "pluginId": "testdata",
+      "pluginName": "TestData DB"
+    }
+  ],
+  "__elements": [
+    {
+      "name": "Verbrauch nach Gerät",
+      "uid": "bcMqgPC7z",
+      "kind": 1,
+      "model": {
+        "datasource": {
+          "type": "testdata",
+          "uid": "${DS_TESTDATA_DB}"
+        },
+        "description": "",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "continuous-GrYlRd"
+            },
+            "mappings": [],
+            "max": 600,
+            "min": 0,
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green"
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "watth"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 9,
+          "w": 8,
+          "x": 0,
+          "y": 18
+        },
+        "id": 18,
+        "options": {
+          "displayMode": "basic",
+          "minVizHeight": 10,
+          "minVizWidth": 0,
+          "orientation": "horizontal",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showUnfilled": true,
+          "text": {
+            "titleSize": 18,
+            "valueSize": 45
+          }
+        },
+        "pluginVersion": "9.0.0",
+        "targets": [
+          {
+            "alias": "Staubsauger",
+            "datasource": {
+              "type": "testdata",
+              "uid": "${DS_TESTDATA_DB}"
+            },
+            "refId": "D",
+            "scenarioId": "csv_metric_values",
+            "stringInput": "550"
+          },
+          {
+            "alias": "Fernseher",
+            "datasource": {
+              "type": "testdata",
+              "uid": "${DS_TESTDATA_DB}"
+            },
+            "refId": "A",
+            "scenarioId": "csv_metric_values",
+            "stringInput": "98"
+          },
+          {
+            "alias": "iPhone 13",
+            "datasource": {
+              "type": "testdata",
+              "uid": "${DS_TESTDATA_DB}"
+            },
+            "refId": "B",
+            "scenarioId": "csv_metric_values",
+            "stringInput": "5"
+          },
+          {
+            "alias": "MacBook Pro",
+            "datasource": {
+              "type": "testdata",
+              "uid": "${DS_TESTDATA_DB}"
+            },
+            "refId": "C",
+            "scenarioId": "csv_metric_values",
+            "stringInput": "50"
+          }
+        ],
+        "title": "Verbrauch nach Gerät",
+        "type": "bargauge"
+      }
+    },
+    {
+      "name": "Auslastung",
+      "uid": "Djd3RPCnz",
+      "kind": 1,
+      "model": {
+        "datasource": {
+          "type": "testdata",
+          "uid": "${DS_TESTDATA_DB}"
+        },
+        "description": "",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "displayName": "Auslastung",
+            "mappings": [],
+            "max": 100,
+            "min": 0,
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green"
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "%"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 9,
+          "w": 4,
+          "x": 8,
+          "y": 18
+        },
+        "id": 20,
+        "options": {
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showThresholdLabels": false,
+          "showThresholdMarkers": true
+        },
+        "pluginVersion": "9.0.0",
+        "targets": [
+          {
+            "alias": "Auslastung",
+            "datasource": {
+              "type": "testdata",
+              "uid": "${DS_TESTDATA_DB}"
+            },
+            "refId": "A",
+            "scenarioId": "csv_metric_values",
+            "stringInput": "54"
+          }
+        ],
+        "title": "Auslastung",
+        "type": "gauge"
+      }
+    },
+    {
+      "name": "Verlauf",
+      "uid": "kfTqgEj7k",
+      "kind": 1,
+      "model": {
+        "datasource": {
+          "type": "testdata",
+          "uid": "${DS_TESTDATA_DB}"
+        },
+        "description": "",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "bars",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "displayName": "Verbrauchsverlauf",
+            "mappings": [],
+            "max": 10,
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green"
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "kwatth"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 9,
+          "w": 12,
+          "x": 12,
+          "y": 18
+        },
+        "id": 22,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom"
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "targets": [
+          {
+            "datasource": {
+              "type": "testdata",
+              "uid": "${DS_TESTDATA_DB}"
+            },
+            "max": 6,
+            "min": 0,
+            "refId": "A",
+            "scenarioId": "random_walk"
+          }
+        ],
+        "title": "Verlauf",
+        "type": "timeseries"
+      }
+    }
+  ],
+  "__requires": [
+    {
+      "type": "panel",
+      "id": "bargauge",
+      "name": "Bar gauge",
+      "version": ""
+    },
+    {
+      "type": "panel",
+      "id": "gauge",
+      "name": "Gauge",
+      "version": ""
+    },
+    {
+      "type": "grafana",
+      "id": "grafana",
+      "name": "Grafana",
+      "version": "9.0.0"
+    },
+    {
+      "type": "datasource",
+      "id": "testdata",
+      "name": "TestData DB",
+      "version": "1.0.0"
+    },
+    {
+      "type": "panel",
+      "id": "timeseries",
+      "name": "Time series",
+      "version": ""
+    }
+  ],
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "target": {
+          "limit": 100,
+          "matchAny": false,
+          "tags": [],
+          "type": "dashboard"
+        },
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": null,
+  "iteration": 1655282814449,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 2,
+      "panels": [],
+      "title": "Übersicht",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "testdata",
+        "uid": "${DS_TESTDATA_DB}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 0,
+          "displayName": "Verbrauch Aktuell",
+          "mappings": [],
+          "max": 25,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "kwatth"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 0,
+        "y": 1
+      },
+      "id": 4,
+      "options": {
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true
+      },
+      "pluginVersion": "9.0.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "testdata",
+            "uid": "${DS_TESTDATA_DB}"
+          },
+          "refId": "A",
+          "scenarioId": "csv_metric_values",
+          "stringInput": "3.8,"
+        }
+      ],
+      "title": "Verbrauch Aktuell",
+      "type": "gauge"
+    },
+    {
+      "datasource": {
+        "type": "testdata",
+        "uid": "${DS_TESTDATA_DB}"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "continuous-GrYlRd"
+          },
+          "mappings": [],
+          "max": 8,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "kwatth"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 6,
+        "y": 1
+      },
+      "id": 6,
+      "options": {
+        "displayMode": "gradient",
+        "minVizHeight": 10,
+        "minVizWidth": 0,
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showUnfilled": true,
+        "text": {
+          "titleSize": 15,
+          "valueSize": 50
+        }
+      },
+      "pluginVersion": "9.0.0",
+      "targets": [
+        {
+          "alias": "Zugangspunkt Küche",
+          "datasource": {
+            "type": "testdata",
+            "uid": "${DS_TESTDATA_DB}"
+          },
+          "refId": "A",
+          "scenarioId": "csv_metric_values",
+          "stringInput": "2.2"
+        },
+        {
+          "alias": "Zugangspunkt Flur",
+          "datasource": {
+            "type": "testdata",
+            "uid": "${DS_TESTDATA_DB}"
+          },
+          "refId": "C",
+          "scenarioId": "csv_metric_values",
+          "stringInput": "0.3"
+        },
+        {
+          "alias": "Zugangspunkt Wohnzimmer",
+          "datasource": {
+            "type": "testdata",
+            "uid": "${DS_TESTDATA_DB}"
+          },
+          "refId": "B",
+          "scenarioId": "csv_metric_values",
+          "stringInput": "1.3"
+        }
+      ],
+      "title": "Verbrauch nach Zugangspunkt",
+      "type": "bargauge"
+    },
+    {
+      "datasource": {
+        "type": "testdata",
+        "uid": "${DS_TESTDATA_DB}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "green",
+            "mode": "palette-classic",
+            "seriesBy": "min"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": -1,
+            "drawStyle": "bars",
+            "fillOpacity": 5,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "normal"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "max": 25,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "kwatth"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 10,
+        "x": 14,
+        "y": 1
+      },
+      "id": 8,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.0.0",
+      "targets": [
+        {
+          "alias": "Zugangspunkt Wohnzimmer",
+          "datasource": {
+            "type": "testdata",
+            "uid": "${DS_TESTDATA_DB}"
+          },
+          "hide": false,
+          "labels": "",
+          "max": 10,
+          "min": 0,
+          "noise": 0,
+          "refId": "A",
+          "scenarioId": "random_walk",
+          "seriesCount": 1,
+          "spread": 1
+        },
+        {
+          "alias": "Zugangspunkt Küche",
+          "datasource": {
+            "type": "testdata",
+            "uid": "${DS_TESTDATA_DB}"
+          },
+          "hide": false,
+          "max": 5,
+          "min": 0,
+          "refId": "B",
+          "scenarioId": "random_walk"
+        },
+        {
+          "alias": "Zugangspunkt Flur",
+          "datasource": {
+            "type": "testdata",
+            "uid": "${DS_TESTDATA_DB}"
+          },
+          "hide": false,
+          "max": 8,
+          "min": 0,
+          "refId": "C",
+          "scenarioId": "random_walk",
+          "spread": 1,
+          "startValue": 0
+        }
+      ],
+      "title": "Verbrauch nach Zugangspunkt - Verlauf",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "testdata",
+        "uid": "${DS_TESTDATA_DB}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "continuous-GrYlRd"
+          },
+          "displayName": "Kosten YTD",
+          "mappings": [],
+          "max": 1000,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "currencyEUR"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 0,
+        "y": 9
+      },
+      "id": 10,
+      "options": {
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true
+      },
+      "pluginVersion": "9.0.0",
+      "targets": [
+        {
+          "alias": "Kosten YTD",
+          "datasource": {
+            "type": "testdata",
+            "uid": "${DS_TESTDATA_DB}"
+          },
+          "refId": "A",
+          "scenarioId": "csv_metric_values",
+          "stringInput": "142"
+        }
+      ],
+      "title": "Kosten",
+      "type": "gauge"
+    },
+    {
+      "datasource": {
+        "type": "testdata",
+        "uid": "${DS_TESTDATA_DB}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "continuous-GrYlRd"
+          },
+          "displayName": "Kosten Monat",
+          "mappings": [],
+          "max": 150,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "currencyEUR"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 5,
+        "x": 6,
+        "y": 9
+      },
+      "id": 12,
+      "options": {
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true
+      },
+      "pluginVersion": "9.0.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "testdata",
+            "uid": "${DS_TESTDATA_DB}"
+          },
+          "refId": "A",
+          "scenarioId": "csv_metric_values",
+          "stringInput": "37.2"
+        }
+      ],
+      "title": "Kosten Monat",
+      "type": "gauge"
+    },
+    {
+      "datasource": {
+        "type": "testdata",
+        "uid": "${DS_TESTDATA_DB}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "continuous-GrYlRd"
+          },
+          "displayName": "Kosten Tag",
+          "mappings": [],
+          "max": 30,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "currencyEUR"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 4,
+        "x": 11,
+        "y": 9
+      },
+      "id": 14,
+      "options": {
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true
+      },
+      "pluginVersion": "9.0.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "testdata",
+            "uid": "${DS_TESTDATA_DB}"
+          },
+          "refId": "A",
+          "scenarioId": "csv_metric_values",
+          "stringInput": "3.45"
+        }
+      ],
+      "title": "Kosten Tag",
+      "type": "gauge"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 17
+      },
+      "id": 16,
+      "panels": [],
+      "title": "Zugangspunkt Wohnzimmer",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "testdata",
+        "uid": "${DS_TESTDATA_DB}"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "continuous-GrYlRd"
+          },
+          "mappings": [],
+          "max": 600,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "watth"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 8,
+        "x": 0,
+        "y": 18
+      },
+      "id": 18,
+      "libraryPanel": {
+        "meta": {
+          "connectedDashboards": 0,
+          "created": "2022-06-15T08:46:29.778176601Z",
+          "createdBy": {
+            "avatarUrl": "/avatar/46d229b033af06a191ff2267bca9ae56",
+            "id": 1,
+            "name": "admin"
+          },
+          "folderName": "",
+          "folderUid": "",
+          "updated": "2022-06-15T08:46:29.778176651Z",
+          "updatedBy": {
+            "avatarUrl": "/avatar/46d229b033af06a191ff2267bca9ae56",
+            "id": 1,
+            "name": "admin"
+          }
+        },
+        "name": "Verbrauch nach Gerät",
+        "uid": "bcMqgPC7z",
+        "version": 1
+      },
+      "options": {
+        "displayMode": "basic",
+        "minVizHeight": 10,
+        "minVizWidth": 0,
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showUnfilled": true,
+        "text": {
+          "titleSize": 18,
+          "valueSize": 45
+        }
+      },
+      "pluginVersion": "9.0.0",
+      "targets": [
+        {
+          "alias": "Staubsauger",
+          "datasource": {
+            "type": "testdata",
+            "uid": "${DS_TESTDATA_DB}"
+          },
+          "refId": "D",
+          "scenarioId": "csv_metric_values",
+          "stringInput": "550"
+        },
+        {
+          "alias": "Fernseher",
+          "datasource": {
+            "type": "testdata",
+            "uid": "${DS_TESTDATA_DB}"
+          },
+          "refId": "A",
+          "scenarioId": "csv_metric_values",
+          "stringInput": "98"
+        },
+        {
+          "alias": "iPhone 13",
+          "datasource": {
+            "type": "testdata",
+            "uid": "${DS_TESTDATA_DB}"
+          },
+          "refId": "B",
+          "scenarioId": "csv_metric_values",
+          "stringInput": "5"
+        },
+        {
+          "alias": "MacBook Pro",
+          "datasource": {
+            "type": "testdata",
+            "uid": "${DS_TESTDATA_DB}"
+          },
+          "refId": "C",
+          "scenarioId": "csv_metric_values",
+          "stringInput": "50"
+        }
+      ],
+      "title": "Verbrauch nach Gerät",
+      "type": "bargauge"
+    },
+    {
+      "datasource": {
+        "type": "testdata",
+        "uid": "${DS_TESTDATA_DB}"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "displayName": "Auslastung",
+          "mappings": [],
+          "max": 100,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "%"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 4,
+        "x": 8,
+        "y": 18
+      },
+      "id": 20,
+      "libraryPanel": {
+        "meta": {
+          "connectedDashboards": 0,
+          "created": "2022-06-15T08:46:36.457911259Z",
+          "createdBy": {
+            "avatarUrl": "/avatar/46d229b033af06a191ff2267bca9ae56",
+            "id": 1,
+            "name": "admin"
+          },
+          "folderName": "",
+          "folderUid": "",
+          "updated": "2022-06-15T08:46:36.457911299Z",
+          "updatedBy": {
+            "avatarUrl": "/avatar/46d229b033af06a191ff2267bca9ae56",
+            "id": 1,
+            "name": "admin"
+          }
+        },
+        "name": "Auslastung",
+        "uid": "Djd3RPCnz",
+        "version": 1
+      },
+      "options": {
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true
+      },
+      "pluginVersion": "9.0.0",
+      "targets": [
+        {
+          "alias": "Auslastung",
+          "datasource": {
+            "type": "testdata",
+            "uid": "${DS_TESTDATA_DB}"
+          },
+          "refId": "A",
+          "scenarioId": "csv_metric_values",
+          "stringInput": "54"
+        }
+      ],
+      "title": "Auslastung",
+      "type": "gauge"
+    },
+    {
+      "datasource": {
+        "type": "testdata",
+        "uid": "${DS_TESTDATA_DB}"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "bars",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "displayName": "Verbrauchsverlauf",
+          "mappings": [],
+          "max": 10,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "kwatth"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 12,
+        "y": 18
+      },
+      "id": 22,
+      "libraryPanel": {
+        "meta": {
+          "connectedDashboards": 0,
+          "created": "2022-06-15T08:46:41.281732567Z",
+          "createdBy": {
+            "avatarUrl": "/avatar/46d229b033af06a191ff2267bca9ae56",
+            "id": 1,
+            "name": "admin"
+          },
+          "folderName": "",
+          "folderUid": "",
+          "updated": "2022-06-15T08:46:41.281732607Z",
+          "updatedBy": {
+            "avatarUrl": "/avatar/46d229b033af06a191ff2267bca9ae56",
+            "id": 1,
+            "name": "admin"
+          }
+        },
+        "name": "Verlauf",
+        "uid": "kfTqgEj7k",
+        "version": 1
+      },
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "testdata",
+            "uid": "${DS_TESTDATA_DB}"
+          },
+          "max": 6,
+          "min": 0,
+          "refId": "A",
+          "scenarioId": "random_walk"
+        }
+      ],
+      "title": "Verlauf",
+      "type": "timeseries"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 27
+      },
+      "id": 24,
+      "panels": [],
+      "title": "Zugangspunkt Küche",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "testdata",
+        "uid": "${DS_TESTDATA_DB}"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "continuous-GrYlRd"
+          },
+          "mappings": [],
+          "max": 2000,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "watth"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 0,
+        "y": 28
+      },
+      "id": 28,
+      "options": {
+        "displayMode": "basic",
+        "minVizHeight": 10,
+        "minVizWidth": 0,
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showUnfilled": true,
+        "text": {
+          "titleSize": 18,
+          "valueSize": 45
+        }
+      },
+      "pluginVersion": "9.0.0",
+      "targets": [
+        {
+          "alias": "Induktionsherd",
+          "datasource": {
+            "type": "testdata",
+            "uid": "${DS_TESTDATA_DB}"
+          },
+          "refId": "D",
+          "scenarioId": "csv_metric_values",
+          "stringInput": "1800"
+        },
+        {
+          "alias": "Mixer",
+          "datasource": {
+            "type": "testdata",
+            "uid": "${DS_TESTDATA_DB}"
+          },
+          "refId": "A",
+          "scenarioId": "csv_metric_values",
+          "stringInput": "600"
+        }
+      ],
+      "title": "Verbrauch nach Gerät",
+      "type": "bargauge"
+    },
+    {
+      "datasource": {
+        "type": "testdata",
+        "uid": "${DS_TESTDATA_DB}"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "displayName": "Auslastung",
+          "mappings": [],
+          "max": 100,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "%"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 4,
+        "x": 8,
+        "y": 28
+      },
+      "id": 26,
+      "options": {
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true
+      },
+      "pluginVersion": "9.0.0",
+      "targets": [
+        {
+          "alias": "Auslastung",
+          "datasource": {
+            "type": "testdata",
+            "uid": "${DS_TESTDATA_DB}"
+          },
+          "refId": "A",
+          "scenarioId": "csv_metric_values",
+          "stringInput": "75"
+        }
+      ],
+      "title": "Auslastung",
+      "type": "gauge"
+    },
+    {
+      "datasource": {
+        "type": "testdata",
+        "uid": "${DS_TESTDATA_DB}"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "bars",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "displayName": "Verbrauchsverlauf",
+          "mappings": [],
+          "max": 10,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "kwatth"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 28
+      },
+      "id": 30,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "testdata",
+            "uid": "${DS_TESTDATA_DB}"
+          },
+          "drop": 2,
+          "labels": "asdf=a",
+          "max": 10,
+          "min": 0,
+          "noise": 0,
+          "refId": "A",
+          "scenarioId": "random_walk",
+          "spread": 0.8,
+          "startValue": 1
+        }
+      ],
+      "title": "Verlauf",
+      "type": "timeseries"
+    }
+  ],
+  "refresh": "",
+  "schemaVersion": 36,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "current": {},
+        "definition": "",
+        "hide": 0,
+        "includeAll": false,
+        "multi": false,
+        "name": "query0",
+        "options": [],
+        "query": "",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      }
+    ]
+  },
+  "time": {
+    "from": "now-6h",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "",
+  "title": "LuftStromDashboard",
+  "uid": "UbneXYjnk",
+  "version": 3,
+  "weekStart": ""
+}
